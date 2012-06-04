@@ -6,6 +6,9 @@
 development:
   adapter: postgresql
   database: twitter_development
+  host: localhost
+  username: ren
+  password: ren
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -13,8 +16,14 @@ development:
 test:
   adapter: postgresql
   database: twitter_test
+  host: localhost
+  username: ren
+  password: ren
 
 production:
   adapter: postgresql
   database: twitter_production
+  host: localhost
+  username: ren
+  password: ren
 
