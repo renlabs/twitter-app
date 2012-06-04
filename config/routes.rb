@@ -1,10 +1,11 @@
 TwitterApp::Application.routes.draw do
-  devise_for :users
 
+  devise_for :users
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root :to => 'home#index'
+  root :to => 'users#home'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
