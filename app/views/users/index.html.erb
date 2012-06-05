@@ -1,8 +1,8 @@
 <div class="row">
-	<div class="span3 offset2">
+	<div class="span5 offset2">
 		<h1>Users#index</h1>
 		<p>Find me in app/views/users/index.html.erb</p>
-	
+		<%= paginate @user %><br>
 		<table class= "table table-bordered table-striped" >
 			<thead>
 				<tr>
@@ -26,7 +26,9 @@
 						<td><%= link_to "Delete", user_path(user.id), :confirm => "Are you sure?", :method => :delete  %></td>
 					</tr>
 				<% end %>
+
 			</tbody>
+		
 		</table>
 
 		<%= link_to "Sign up",new_user_registration_path %><br>

@@ -3,14 +3,17 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => :home
 
   def index
-    @user = User.all
+    @user = User.order("id").page(params[:page]).per(10)
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
-  def new
+  def update
+    @user = User.find(params[:id])
   end
+    
 
   def sign_out
   	redirect_to root_path
@@ -18,10 +21,6 @@ class UsersController < ApplicationController
 
   def destroy
   	redirect_to root_path
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
 end
