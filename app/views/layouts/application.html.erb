@@ -16,7 +16,8 @@
             <span class="icon-bar"></span>
           </a>
 
-          <a class="brand" href="#">Twitter</a>
+          <a class="brand" href="#"> Twitter</a>
+
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><%= link_to "Home", root_path %></li>
@@ -27,13 +28,13 @@
             <div class="pull-right">
               <ul class = "nav-collapse nav">
                 <% if user_signed_in? %>
-                  <li><a href="#"> Signed in as,  </a></li>
+                  <!-- <li><a href="#"> Signed in as,  </a></li> -->
                   <li>
                     <div class="btn-group">
                       <%= link_to(@users) do%>
                         <a class="btn btn-info dropdown-toggle" href="#" data-toggle="dropdown">
                           <i class="icon-user"></i>
-                          <%= current_user.username %>
+                          <%= "Signed in as, #{current_user.username}" %>
                           <b class="caret"></b>
                         </a>
                       <% end %>
