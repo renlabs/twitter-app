@@ -5,8 +5,8 @@
 				"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 		</div>
 		<%= paginate @user %><br>
-		<table class= "table table-bordered table-striped" >
-			<thead>
+		<table id="cat" class= "table table-bordered table-striped" >
+			<thead >
 				<tr>
 					<th>Username</th>
 					<th>Firstname</th>
@@ -19,12 +19,12 @@
 
 			<tbody>
 				<% @user.each do |user| %>
-					<tr>
+					<tr id= <%= user.id %> foo= <%= user.sex %> >
 						<td><%= link_to "#{user.username}", user_path(user.id) %></td>
 						<td><%= user.firstname %></td>
-						<td><%= user.lastname %></td>
+						<td class="lastname" ><%= user.lastname %></td>
 						<td><%= user.age %></td>
-						<td><%= user.sex %></td>
+						<td class="sex"><%= user.sex %></td>
 						<td><%= link_to "Delete", user_path(user.id), :confirm => "Are you sure?", :method => :delete  %></td>
 					</tr>
 				<% end %>
@@ -33,5 +33,16 @@
 		
 		</table>
 
+		<%= button_tag "Ok", :id => "but1" , :class => "some" %>
+		<%= button_tag "Ok2", :id => "but2"%>
+	
+		<%= text_field_tag :some %>	
+
+		<div class= "tweets">
+			<p>
+			TEST
+			</p>
+		</div>
+		
 	</div>
 </div>

@@ -1,15 +1,12 @@
 TwitterApp::Application.routes.draw do
 
-  get "comments/new"
-
-  get "tweets/index"
-
-  get "tweets/show"
-
-  get "tweets/new"
 
   devise_for :users
-  resources :users
+  resources :users do
+    resources :tweets do
+      resources :comments
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

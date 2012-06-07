@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 gem 'paperclip' , :git => "https://github.com/thoughtbot/paperclip.git"
 gem 'kaminari'
-gem 'devise'
+gem 'devise', :git => "git://github.com/plataformatec/devise.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

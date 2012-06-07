@@ -4,6 +4,7 @@
   <title>TwitterApp</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -40,8 +41,8 @@
                       <% end %>
 
                       <ul class="dropdown-menu">
-                        <li><%= link_to "Profile","#" %></li>
-                        <li><%= link_to "Tweets","#" %></li>
+                        <li><%= link_to "Profile",user_path(current_user.id) %></li>
+                        <li><%= link_to "Tweets",user_tweets_path(current_user.id) %></li>
                         <li><%= link_to "Friends","#" %></li>
                         <li class="divider"></li>
                         <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>

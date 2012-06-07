@@ -1,6 +1,16 @@
 GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 65325f7f815e6f040ce8154b08bbc6e2d209190a
+  specs:
+    devise (2.1.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.7)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
+
+GIT
   remote: https://github.com/thoughtbot/paperclip.git
-  revision: 24d143978e0df6f8424e8a333605a89a87e33e23
+  revision: dd99e70d403088edb73dce81b0df0bd0660d2815
   specs:
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
@@ -51,11 +61,6 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     commonjs (0.2.6)
-    devise (2.1.0)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.7)
-      railties (~> 3.1)
-      warden (~> 1.1.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -126,7 +131,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.0.8)
+    twitter-bootstrap-rails (2.0.9)
       actionpack (>= 3.1)
       less-rails (~> 2.2.2)
       railties (>= 3.1)
@@ -143,7 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  devise
+  devise!
   jquery-rails
   kaminari
   paperclip!

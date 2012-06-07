@@ -1,0 +1,5 @@
+<% tweets.each do |t| %>
+		<div class= "user_tweets well" >
+			<h3><%= "#{t.user.username}: #{t.tweet}" %></h3>
+		</div>
+<% end %>

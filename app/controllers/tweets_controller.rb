@@ -1,7 +1,8 @@
 class TweetsController < ApplicationController
 
   def index
-  	@tweet = User.find(params[:id]).tweets
+    @user = User.find(params[:user_id])
+  	@tweet = @user.tweets
   end
 
   def show
@@ -13,14 +14,19 @@ class TweetsController < ApplicationController
   end
 
   def create
-  	@tweet = Tweet.create(params[:tweet])
+    @user = User.find(params[:user_id])
+  	@tweet = @user.tweets.new(params[:tweet])
 
   	if @tweet.save
   		flash[:notice] = "Tweet creation successful"
   	else
   		flash[:notice] = "#{@tweet.errors}"
   	end
-  	#redirect_to user_tweet_index 
+
+    respond_to do |format|
+      format.js {render :layout => false}
+    end
+
   end
 
 end
