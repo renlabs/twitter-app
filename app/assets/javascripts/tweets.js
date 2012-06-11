@@ -1,7 +1,11 @@
 $(function(){
 
 	$(".user_tweets").click(function() {
-		alert("Hi");
+		console.log("Hi");
+	});
+
+	$('#tweetform').submit(function() {  
+		$('tweettext').val(' ');
 	});
 
 });

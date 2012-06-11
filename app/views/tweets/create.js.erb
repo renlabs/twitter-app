@@ -1,2 +1,1 @@
-$(".tweets-container").html("<%= escape_javascript(render :partial => 'user_tweets', :locals => {:tweets => @user.tweets }) %>")
-// .append("	<p><%= @user %></p>");
+$(".tweets-container").html("<%= escape_javascript(render :partial => 'user_tweets', :locals => {:tweets => @user.tweets }) %>");

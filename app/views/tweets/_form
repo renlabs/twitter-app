@@ -1,7 +1,0 @@
-<%= form_for tweet, :url => user_tweets_path(params[:user_id]), :remote => true, :method => :post do |tw| %>
-	<p>
-		<%= tw.label :tweet %>
-		<%= tw.text_field :tweet , :value => " ", :class => "span5"%>
-		<%= tw.submit "New tweet", :class => "btn-info" %>
-	</p>
-<% end %>

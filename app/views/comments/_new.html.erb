@@ -1,0 +1,9 @@
+<% tweet.comments.each do |t| %> 
+	<p><%= t.comment %></p>
+<% end %>
+
+<%= form_for @comment, :url => user_tweet_comments_path(tweet.user.id,tweet.id), :method => :post, :remote => true do |comm| %>
+	<%= comm.label :comment %>
+	<%= comm.text_field :comment %>
+	<%= comm.submit "Go" %>
+<% end %>

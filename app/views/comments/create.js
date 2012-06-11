@@ -1,0 +1,2 @@
+//$(".tweets-container").html("<%= escape_javascript(render :partial => 'tweets/user_tweets', :locals => {:tweets => @user.tweets }) %>");
+$(".comments").html("<%= escape_javascript(render :partial => 'new', :locals => {:tweet => @user.tweets.find(params[:tweet_id]) }) %>");

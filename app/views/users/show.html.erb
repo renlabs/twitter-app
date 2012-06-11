@@ -33,17 +33,7 @@
 			<br><%= user.submit "Update" , :class => "btn btn-info" %>
 
 		<% end %>
-		<%= form_for @tweet, :url => user_tweets_path(@user.id), :remote => true do |tweet| %>
-				<p>
-					<%= tweet.label :tweet %>
-					<%= tweet.text_field :tweet, :class => "span5" %>
-					<%= tweet.submit "New tweet", :class => "btn-info" %>
-				</p>
-			<% end %>
-			
-		<div class="tweets">
-			<%= render :partial => "user_tweets", :locals => {:tweets => @user.tweets } %>
-		</div>
+	
 
 	</div>
 </div>
