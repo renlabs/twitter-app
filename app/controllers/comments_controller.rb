@@ -20,5 +20,15 @@ class CommentsController < ApplicationController
 
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @tweet = @user.tweets.find(params[:tweet_id])
+    @comment = @tweet.comments.find(params[:id])
+
+    @comment.destroy
+
+    #redirect_to user_tweets_path(@user,@tweet)
+  end
+
 
 end
