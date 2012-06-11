@@ -12,14 +12,13 @@
 
 <div class = "row">
 	<div class= "span12">
-		<div>
-			<%= render :partial => 'form', :locals => {:tweet => @tweet} %>
+		<div class ="new_tweet" >
+			<%= render :partial => 'form' %>
 		</div>
 
 		<div class= "tweets-container">
-			<%= render :partial => "user_tweets", :locals => {:tweets => @user.tweets } %>
+			<%= render :partial => "user_tweets", :locals => {:tweets => @tweet } %>
 		</div>
-
  	</div> <!--end of span12 -->
 
 </div>

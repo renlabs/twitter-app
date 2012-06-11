@@ -1,12 +1,14 @@
 <% tweets.order("id DESC").each do |t| %>
-		<div class= "user_tweets well" >
+		<div class= "user_tweets well" id= <%= "tweet#{t.id}" %>  >
 			<h3>
 				<%= "#{t.user.username}: #{t.tweet}" %>
 			</h3>
 
-			<div class="comments" id= <%= "#{t.id}" %> >
+			<div class= <%= "comments#{t.id}" %>  >
 				<%= render :partial => "comments/new", :locals => {:tweet => t } %>
 			</div>
 			
 		</div>
 <% end %>
+
+

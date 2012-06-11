@@ -1,11 +1,11 @@
 $(function(){
 
-	$(".user_tweets").click(function() {
+	$("#tweetbutton").click(function() {
 		console.log("Hi");
 	});
 
-	$('#tweetform').submit(function() {  
-		$('tweettext').val(' ');
+	$('.tweets-container').load(function() {  
+		$('#tweettext').val("");
 	});
 
 });

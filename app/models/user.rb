@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
   								:firstname, :lastname, :sex, :age
   # attr_accessible :title, :body
 
-  has_many :tweets
+  has_many :tweets, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 end
