@@ -7,6 +7,10 @@ gem 'rails', '3.2.3'
 
 #gem 'sqlite3'
 gem 'pg'
+
+group :test, :development do
+	gem 'rspec-rails'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,6 +22,10 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+	gem 'capybara'
 end
 
 gem 'jquery-rails'

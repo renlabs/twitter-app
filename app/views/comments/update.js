@@ -1,0 +1,1 @@
+//$(".comments<%= escape_javascript( params[:tweet_id] ) %>").html("<%= escape_javascript(render :partial => 'new', :locals => {:tweet => @user.tweets.find(params[:tweet_id]) }) %>");

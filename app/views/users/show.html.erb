@@ -1,39 +1,35 @@
-<h1>Profile</h1>
+<% provide(:title,"Profile") %>
 
+<div class = "user_profile" >
+	<div class="row" >
+		<div class="hero-unit span4">
+			<h1><%= @user.username %></h1><br><br>
+			<%= form_for @user, :url => user_path(params[:id]), :remote => true do |user| %>
+				<p> 
+					<%= user.label :firstname %>
+					<%= user.text_field :firstname ,:class => "span3" %> 
+				</p>
 
-<div class="row" >
-	<div class="hero-unit span5">
-		<h1><%= @user.username %></h1><br>
-		<%= form_for @user, :url => user_path(params[:id]) do |user| %>
-			<p> 
-				<%= user.label :username %>
-				<%= user.text_field :username ,:class => "span3" %> 
-			</p>
+				<p> 
+					<%= user.label :lastname %>
+					<%= user.text_field :lastname ,:class => "span3" %> 
+				</p>
 
-			<p> 
-				<%= user.label :firstname %>
-				<%= user.text_field :firstname ,:class => "span3" %> 
-			</p>
+				<p> 
+					<%= user.label :age %>
+					<%= user.text_field :age ,:class => "span3" %> 
+				</p>
 
-			<p> 
-				<%= user.label :lastname %>
-				<%= user.text_field :lastname ,:class => "span3" %> 
-			</p>
+				<p> 
+					<%= user.label :sex %>
+					<%= user.select(:sex, [['Male', 'M'], ['Female', 'F']]) %>
+				</p>
 
-			<p> 
-				<%= user.label :age %>
-				<%= user.text_field :age ,:class => "span3" %> 
-			</p>
+				<br><%= user.submit "Update" , :class => "btn btn-info" %>
 
-			<p> 
-				<%= user.label :sex %>
-				<%= user.text_field :sex ,:class => "span3" %> 
-			</p>
+			<% end %>
+		
 
-			<br><%= user.submit "Update" , :class => "btn btn-info" %>
-
-		<% end %>
-	
-
+		</div>
 	</div>
 </div>

@@ -52,8 +52,10 @@ $(function(){
 	});
 
 	$("#but2").click(function() {
-		$("tr:even").css({'background-color':'red'});
-		animates();
+		//$("tr:even").css({'background-color':'red'});
+		//animates();
+
+		$("this").attr("#cat");
 	});
 
 	$("thead").mousemove(function() {

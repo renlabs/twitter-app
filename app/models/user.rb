@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :tweets, :dependent => :destroy
-  has_many :comments, :dependent => :destroy
+  has_many :comments, :through => :tweets, :dependent => :destroy
 end

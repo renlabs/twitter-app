@@ -1,13 +1,21 @@
-<% tweet.comments.each do |t| %> 
-	<p>
-		<%= t.comment %>
-		<%= link_to "Edit","#" %> 
-		<%= link_to "Delete", user_tweet_comment_path(t.tweet.user.id, t.tweet.id, t.id), :method => :delete, :confirm => "delete comment?", :remote => true %>
-	</p>
-<% end %>
+<table class="table table-striped">
 
-<%= form_for @comment, :url => user_tweet_comments_path(tweet.user.id,tweet.id), :method => :post, :remote => true do |comm| %>
-	<%= comm.label :comment %>
-	<%= comm.text_field :comment %>
-	<%= comm.submit "Go" %>
+<% tweet.comments.order("id ASC").each do |t| %> 
+	<tr class="each_comm" id= <%= "each_comment#{t.id}"%> >
+
+			<td class="span3">
+				
+				<%= simple_format(word_wrap t.comment,:line_length => 30) %>
+				<%= link_to "Edit","#", :class => "comm_edit" %> 
+				<%= link_to "Delete",user_tweet_comment_path(t.tweet.user.id,t.tweet.id, t.id), :method => :delete, :confirm => "delete comment?", :remote => true , 
+														   	:class => "comm_delete" %>
+			</td>
+	</tr>
+<% end %>
+</table>
+
+
+<%= form_for @comment, :url => user_tweet_comments_path(current_user.id,tweet.id), :method => :post, :remote => true do |comm| %>
+	<%= comm.text_field :comment, :placeholder => "write a comment" %>
+	<%= comm.submit "Post", :class => "btn-primary" %>
 <% end %>

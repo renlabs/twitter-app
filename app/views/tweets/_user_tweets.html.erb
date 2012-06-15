@@ -2,7 +2,7 @@
 		<div class= "user_tweets well" id= <%= "tweet#{t.id}" %>  >
 			<h3>
 				<%= "#{t.user.username}: #{t.tweet}" %>
-			</h3>
+			</h3></br>
 
 			<div class= <%= "comments#{t.id}" %>  >
 				<%= render :partial => "comments/new", :locals => {:tweet => t } %>

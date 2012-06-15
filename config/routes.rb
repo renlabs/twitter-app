@@ -2,6 +2,7 @@ TwitterApp::Application.routes.draw do
 
 
   devise_for :users
+  
   resources :users do
     resources :tweets do
       resources :comments
