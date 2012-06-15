@@ -1,12 +1,15 @@
 class CommentsController < ApplicationController
 
+  before_filter :authenticate_user!
+
 	def show
 	end
 
   def create
-  	@user = User.find(params[:user_id])
-  	@tweet = @user.tweets.find(params[:tweet_id])
-  	@comment = @tweet.comments.new(params[:comment])
+  
+  	@tweet = Tweet.find(params[:tweet_id])
+  	@comment = @tweet.comments.new(user_comment: params[:comment][:user_comment],
+                                                        user_id: params[:user_id])
 
   	if @comment.save
   		flash[:notice] = "Comment created"

@@ -4,8 +4,7 @@
 	<tr class="each_comm" id= <%= "each_comment#{t.id}"%> >
 
 			<td class="span3">
-				
-				<%= simple_format(word_wrap t.comment,:line_length => 30) %>
+				<%= t.user_comment %>
 				<%= link_to "Edit","#", :class => "comm_edit" %> 
 				<%= link_to "Delete",user_tweet_comment_path(t.tweet.user.id,t.tweet.id, t.id), :method => :delete, :confirm => "delete comment?", :remote => true , 
 														   	:class => "comm_delete" %>
@@ -16,6 +15,6 @@
 
 
 <%= form_for @comment, :url => user_tweet_comments_path(current_user.id,tweet.id), :method => :post, :remote => true do |comm| %>
-	<%= comm.text_field :comment, :placeholder => "write a comment" %>
+	<%= comm.text_field :user_comment, :placeholder => "write a comment" %>
 	<%= comm.submit "Post", :class => "btn-primary" %>
 <% end %>

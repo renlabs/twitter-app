@@ -9,4 +9,9 @@ class CreateTweets < ActiveRecord::Migration
     end
     add_index :tweets, :user_id
   end
+
+  def self.down
+  	drop_table :tweets
+  end
+
 end

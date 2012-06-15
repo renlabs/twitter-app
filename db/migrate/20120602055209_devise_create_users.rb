@@ -43,4 +43,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :unlock_token,         :unique => true
     # add_index :users, :authentication_token, :unique => true
   end
+
+  def self.down
+    drop_table :users
+  end
+  
 end

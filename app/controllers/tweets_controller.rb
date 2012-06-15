@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
   	@tweet = @user.tweets
@@ -29,7 +31,7 @@ class TweetsController < ApplicationController
       format.js {render :layout => false}
     end
 
-    
+
   end
 
 end
